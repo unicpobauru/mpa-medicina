@@ -78,7 +78,28 @@ src/
   index.css               # design tokens (@theme) com a paleta MPA
 ```
 
-## Despliegue
+## Deploy
 
-Ainda não publicado. Segue o mesmo fluxo dos outros dois sites (GitHub Actions → GitHub Pages)
-assim que o conteúdo pendente acima estiver definido.
+**No ar em:** https://unicpobauru.github.io/mpa-medicina/
+
+Diferente dos outros dois sites do grupo (que fazem deploy automático via GitHub Actions a
+cada `git push`), este aqui está publicado direto do branch `gh-pages` — o token do `gh` CLI
+usado nesta máquina não tem o escopo `workflow` necessário para o GitHub aceitar um arquivo em
+`.github/workflows/`, e a autorização interativa (`gh auth refresh -s workflow`) falhou
+repetidamente por um erro de rede (`context deadline exceeded`), então não deu pra configurar
+o deploy automático desta vez.
+
+**Para publicar uma atualização** (até resolver o escopo do token):
+
+```bash
+cd mpa-medicina
+npm run build
+# depois, copiar o conteúdo de dist/ para o branch gh-pages e dar push —
+# me peça pra fazer isso quando tiver mudanças pra publicar.
+```
+
+Se no futuro conseguir autorizar o escopo `workflow` (repetir `gh auth refresh -h github.com -s
+workflow` e confirmar em https://github.com/login/device), aí sim dá pra copiar o
+`.github/workflows/deploy.yml` do `unicpo-miniimplantes` ou `diplomado-alineadores` para cá e
+ativar o deploy automático — o `vite.config.ts` já está com o `base` certo (`/mpa-medicina/`)
+para isso funcionar sem mudanças.
