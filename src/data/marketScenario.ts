@@ -1,17 +1,19 @@
 export interface MarketStat {
   label: string;
   fromYear: string;
-  fromText: string;
+  fromLabel: string;
+  fromNum: number;
   toYear: string;
-  /** Valor final para a contagem animada (inteiro). Use `toText` quando não for inteiro. */
-  toValue?: number;
+  toLabel: string;
+  toNum: number;
+  /** Se definido, anima uma contagem (inteiro) até este valor; senão usa toLabel fixo. */
+  toCount?: number;
   toSuffix?: string;
-  toText?: string;
   badge: string;
   note: string;
 }
 
-/** Dados do "Cenário da Medicina Atual" — PPT do MPA, slide 10
+/** Dados do "Panorama do mercado médico" — PPT do MPA, slide 10
  *  (Fonte: Demografia Médica no Brasil 2025 — Ministério da Saúde · FMUSP · AMB). */
 export const marketScenario = {
   eyebrow: "Panorama do mercado médico",
@@ -22,28 +24,36 @@ export const marketScenario = {
     {
       label: "Escolas médicas no Brasil",
       fromYear: "2015",
-      fromText: "257",
+      fromLabel: "257",
+      fromNum: 257,
       toYear: "2025",
-      toValue: 494,
+      toLabel: "494",
+      toNum: 494,
+      toCount: 494,
       badge: "≈ 2×",
       note: "As vagas de graduação cresceram quase 185% em uma década.",
     },
     {
-      label: "Novos médicos por ano",
+      label: "Novos médicos formados por ano",
       fromYear: "2015",
-      fromText: "18 mil",
+      fromLabel: "18 mil",
+      fromNum: 18000,
       toYear: "2025",
-      toValue: 36,
+      toLabel: "36 mil",
+      toNum: 36000,
+      toCount: 36,
       toSuffix: " mil",
       badge: "2×",
       note: "O dobro de profissionais entrando no mercado, todo ano.",
     },
     {
-      label: "Médicos em atividade",
+      label: "Médicos em atividade no país",
       fromYear: "2026",
-      fromText: "635 mil",
+      fromLabel: "635 mil",
+      fromNum: 635000,
       toYear: "2035",
-      toText: "1,15 mi",
+      toLabel: "1,15 mi",
+      toNum: 1150000,
       badge: "projeção",
       note: "Quase o dobro de profissionais em apenas 10 anos.",
     },
