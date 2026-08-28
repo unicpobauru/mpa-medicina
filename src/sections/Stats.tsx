@@ -5,16 +5,26 @@ import { aboutStats } from "../data/stats";
 
 export function Stats() {
   return (
-    <section className="bg-ink py-16 sm:py-20">
+    <section className="bg-ink py-20 sm:py-24">
       <Container>
-        <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
+        <Reveal>
+          <p className="mb-12 text-center text-[13px] font-semibold uppercase tracking-[0.18em] text-gold-400">
+            O peso de quem forma você
+          </p>
+        </Reveal>
+        <div className="grid grid-cols-2 gap-x-4 gap-y-12 md:grid-cols-4 md:divide-x md:divide-white/10">
           {aboutStats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 80}>
-              <div className="flex flex-col gap-1 text-center sm:text-left">
-                <p className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+              <div className="flex flex-col items-center gap-2 px-2 text-center md:px-6">
+                <p
+                  className="font-extrabold leading-none tracking-tight text-white [font-variant-numeric:tabular-nums]"
+                  style={{ fontSize: "clamp(2.25rem, 1.5rem + 2.4vw, 3.5rem)" }}
+                >
                   <CountUp end={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
                 </p>
-                <p className="text-[13px] text-white/60 sm:text-sm">{stat.label}</p>
+                <p className="max-w-[160px] text-[13px] leading-snug text-white/55 sm:text-sm">
+                  {stat.label}
+                </p>
               </div>
             </Reveal>
           ))}

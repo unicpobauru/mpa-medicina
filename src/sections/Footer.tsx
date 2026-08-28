@@ -11,8 +11,8 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <img src="images/logo-mpa-white.png" alt="MPA — Medical Performance Academy" className="h-7 w-auto self-start" />
             <p className="max-w-[320px] text-[14px] leading-relaxed text-white/50">
-              Pós-Graduação em Medicina Metabólica e Longevidade — uma realização do Grupo
-              UniCPO, que reúne a FAINTER e a UniCPO em uma só estrutura de educação médica.
+              Pós-Graduação em Medicina Metabólica e Longevidade — uma realização da FAINTER,
+              instituição pertencente ao Grupo UniCPO.
             </p>
             <img src="images/logo-fainter.png" alt="FAINTER" className="mt-2 h-5 w-auto self-start opacity-70" />
           </div>

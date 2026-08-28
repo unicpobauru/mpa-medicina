@@ -55,21 +55,27 @@ npm run preview    # serve o build de produção localmente
 
 - **WhatsApp**: `src/lib/whatsapp.ts` está com um placeholder `[WHATSAPP_MPA]` — trocar pelo
   número real (formato `55DDDNUMERO`) assim que o cliente definir.
-- **Testemunhos** (`src/data/testimonials.ts`): são ilustrativos — o MPA ainda não tem turma
-  formada. Substituir por depoimentos reais depois da primeira turma.
-- **Datas da turma**: não há datas fixas ainda (o PPT trazia apenas placeholders `00/00/0000`).
-  A seção final usa um card genérico "turma em formação" — trocar por datas reais quando
-  definidas (mesmo padrão de `cohorts.ts` usado nos outros sites, se preferir voltar a mostrar
-  datas específicas).
-- **Preço**: por decisão do cliente, o investimento (R$5.000 + matrícula R$997, conforme o PPT)
-  não é exibido na página — fluxo 100% "fale com um consultor".
+- **Testemunhos** (`src/data/testimonials.ts`): hoje são 4 depoimentos reais de alunos do
+  Grupo UniCPO, replicados do site do Diplomado em Mini-Implantes e traduzidos para o
+  Português (Karlita Romero/Equador — em vídeo, no bloco destaque; Felipe Acevedo/Chile;
+  Yndiana Garrido/Venezuela; Mackarena del Pilar/Chile). Trocar por depoimentos de médicos
+  do MPA após a primeira turma.
+- **Seções ocultadas a pedido do cliente**: `Facility` (infraestrutura) e a linha do tempo de
+  `About` — os componentes/dados continuam no repositório; ver comentários em `App.tsx`.
+- **Datas da turma**: já preenchidas com as datas reais do PPT em `src/data/cohorts.ts`
+  (início 06/02/2027 + 4 encontros presenciais) e citadas na FAQ. Confirmar com o cliente antes
+  de publicar.
+- **Preço**: por decisão do cliente, o investimento (18x R$4.997 / oferta fundador R$2.998 +
+  matrícula R$997, conforme o PPT) **não** é exibido na página — fluxo 100% "fale com um consultor".
+- **CRM/RQE dos professores**: atualizados conforme o PPT (slides 15–18). Alguns números
+  mudaram em relação à versão anterior do site — conferir com o cliente (ver `src/data/faculty.ts`).
 
 ## Estrutura de pastas
 
 ```
 src/
   components/ui/         # Button, Container, CountUp, DragCarousel, ImagePlaceholder, Reveal...
-  sections/               # Header, Hero, Quote, About, Stats, Differentials, CoordinatorVideo,
+  sections/               # Header, Hero, Quote, Differentials, About, Stats, CoordinatorVideo,
                           # Methodology, Modules, Faculty, Testimonials, Facility, FAQ, FinalCTA,
                           # Footer — VirtualTour existe mas não é usado (ver acima)
   data/                   # conteúdo separado dos componentes (nav, about, faq, modules, etc.)

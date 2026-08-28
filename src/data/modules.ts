@@ -1,69 +1,47 @@
-export interface Module {
-  number: string;
+export interface CurriculumTopic {
   title: string;
   description: string;
-  hours: number;
 }
 
-export const modules: Module[] = [
+/** Seção "O que você vai aprender": 3 tópicos em destaque do currículo (PPT do MPA,
+ *  slides 24–27) + o bloco "e muito mais". A matriz completa tem 10 módulos. */
+export const curriculumTopics: CurriculumTopic[] = [
   {
-    number: "01",
     title: "Emagrecimento e obesidade",
-    description: "Fisiopatologia, terapêutica medicamentosa (GLP-1, Tirzepatida), estratégias avançadas e programas de acompanhamento. Prof.ª Dra. Thaís Moreschi.",
-    hours: 65,
+    description:
+      "Farmacoterapia moderna do emagrecimento (GLP-1, tirzepatida), metabolismo e preservação de massa muscular.",
   },
   {
-    number: "02",
-    title: "Terapias de reposição hormonal",
-    description: "Bases fisiológicas, reposição feminina e masculina, protocolos avançados e gestão clínica. Prof.ª Dra. Manuela Satake.",
-    hours: 65,
+    title: "Reposição hormonal",
+    description:
+      "Terapias de reposição hormonal masculina e feminina, com performance, monitorização e segurança.",
   },
   {
-    number: "03",
-    title: "Terapias nutricionais injetáveis",
-    description: "Fundamentos, terapias EV e IM, suporte gestacional, longevidade e performance, hands-on com casos clínicos reais. Prof.ª Dra. Manuela Satake.",
-    hours: 60,
-  },
-  {
-    number: "04",
-    title: "Lipedema",
-    description: "Fisiopatologia, avaliação, tratamento clínico, procedimentos e programas de tratamento. Prof. Dr. Maurício Mosna.",
-    hours: 45,
-  },
-  {
-    number: "05",
-    title: "Transtornos sexuais masculinos e femininos",
-    description: "Disfunções masculinas e femininas, terapias regenerativas e programas premium de sexualidade. Prof. Dr. Leonardo Horta.",
-    hours: 40,
-  },
-  {
-    number: "06",
-    title: "Estética íntima masculina",
-    description: "Anatomia e segurança, preenchimento peniano, bioestimuladores e gestão de posicionamento premium. Prof. Dr. Tiago Vilela Santos.",
-    hours: 30,
-  },
-  {
-    number: "07",
-    title: "Estética íntima feminina",
-    description: "Fundamentos, procedimentos, sexualidade e autoestima, protocolos integrados de rejuvenescimento íntimo. Prof.ª Dra. Maria Amália.",
-    hours: 30,
-  },
-  {
-    number: "08",
-    title: "Modelo de negócio e vendas para clínicas",
-    description: "Vendas éticas, posicionamento, autoridade médica, experiência premium do paciente e produtos de escala. Prof. Dr. Glauco Melo.",
-    hours: 25,
-  },
-  {
-    number: "09",
-    title: "Gestão para clínicas",
-    description: "Gestão financeira, comercial, de pessoas e operacional — indicadores, precificação e expansão. Prof. Victor Tóffoli.",
-    hours: 25,
-  },
-  {
-    number: "+",
-    title: "Segurança, evidências, ética e regulação",
-    description: "Medicina baseada em evidências, uso off-label, documentação, consentimento e discussão de casos controversos. Prof. Dr. Fábio Moraes.",
-    hours: 15,
+    title: "Terapias injetáveis (IM/EV)",
+    description:
+      "Protocolos intramusculares e endovenosos, com prescrição, segurança e treinamento hands-on.",
   },
 ];
+
+/** Destaque de Gestão de Clínicas — PPT do MPA, slide 23. */
+export const gestaoClinica = {
+  title: "Gestão, posicionamento e modelos de negócio para clínicas",
+  intro:
+    "Ser um excelente médico é apenas parte do sucesso. São 50 horas para transformar conhecimento médico em um negócio mais estratégico e sustentável.",
+  pillars: [
+    "Vender melhor — comunicar valor e aumentar a conversão.",
+    "Fidelizar mais — experiência, recorrência e indicação.",
+    "Posicionar-se no mercado — autoridade e percepção de valor.",
+    "Gerir com indicadores — KPIs, rentabilidade e ticket médio.",
+  ],
+  bigNumber: "50h",
+  bigNumberLabel: "clínica como negócio",
+};
+
+export const curriculumMore = {
+  title: "E muito mais",
+  summary:
+    "Lipedema, saúde sexual, estética íntima, evidência e segurança (ética, regulação e uso off-label) e gestão, posicionamento e modelos de negócio para clínicas.",
+  bigNumber: "400h",
+  bigNumberLabel: "teoria + prática + hands-on",
+};

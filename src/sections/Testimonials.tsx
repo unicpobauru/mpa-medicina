@@ -10,7 +10,7 @@ import { ImagePlaceholder } from "../components/ui/ImagePlaceholder";
 import { renderBold } from "../lib/renderBold";
 import { testimonials, type Testimonial } from "../data/testimonials";
 
-/** Shows the real photo once it exists at `src`; falls back to the placeholder if it 404s. */
+/** Mostra a foto real quando existir em `src`; cai de volta no placeholder se 404. */
 function TestimonialPhoto({ t }: { t: Testimonial }) {
   const [failed, setFailed] = useState(false);
 
@@ -41,12 +41,12 @@ export function Testimonials() {
           align="center"
           tone="dark"
           eyebrow="MPA · Resultados reais"
-          title="Médicos que já deram o passo"
-          description="Profissionais de diferentes especialidades já vivem a experiência MPA e aplicam a formação em sua prática clínica."
+          title="Doutores que se formaram com a gente"
+          description="Profissionais de diferentes especialidades já vivem a experiência e aplicam a formação em sua prática clínica."
           className="mx-auto max-w-[640px]"
         />
 
-        <div className="mt-14 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-4">
+        <div className="mt-14 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 sm:grid sm:grid-cols-3 sm:overflow-visible sm:pb-0">
           {testimonials.map((t, i) => (
             <Reveal
               key={t.image}

@@ -5,9 +5,9 @@ export interface NavLink {
 
 export const navLinks: NavLink[] = [
   { label: "Início", href: "#inicio" },
-  { label: "Grupo UniCPO", href: "#institucion" },
+  { label: "FAINTER", href: "#institucion" },
   { label: "Metodologia", href: "#metodologia" },
-  { label: "Currículo", href: "#modulos" },
-  { label: "Especialistas", href: "#docentes" },
+  { label: "Conteúdo", href: "#modulos" },
+  { label: "Corpo docente", href: "#docentes" },
   { label: "Perguntas", href: "#duvidas" },
 ];

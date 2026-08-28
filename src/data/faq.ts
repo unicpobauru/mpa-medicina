@@ -21,7 +21,7 @@ export const faqItems: FaqItem[] = [
     number: "03",
     question: "A certificação é reconhecida?",
     answer:
-      "Sim. O MPA é uma realização do Grupo UniCPO, com mais de 20 anos de tradição na formação de especialistas e metodologia de excelência reconhecida nacionalmente.",
+      "Sim. O MPA é uma realização da FAINTER, uma instituição do Grupo UniCPO com uma estrutura dedicada à educação nas áreas da Saúde, reconhecida com nota máxima (5) na avaliação institucional do MEC e mais de 20 anos de tradição na formação de especialistas.",
   },
   {
     number: "04",
@@ -37,9 +37,9 @@ export const faqItems: FaqItem[] = [
   },
   {
     number: "06",
-    question: "Quando são os próximos encontros presenciais?",
+    question: "Quando começa a turma e quando são os encontros presenciais?",
     answer:
-      "A próxima turma está em formação, com 4 encontros presenciais em São Paulo. Fale com um consultor para confirmar as datas atualizadas e garantir sua vaga.",
+      "A turma tem início em 06/02/2027, com 4 encontros presenciais em São Paulo: 08 e 09/05/2027, 04 e 05/09/2027, 05 e 06/02/2028 e 01 e 02/07/2028. Fale com um consultor para garantir sua vaga.",
   },
   {
     number: "07",

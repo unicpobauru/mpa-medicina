@@ -3,7 +3,7 @@ import { CalendarDays, MapPin, Clock } from "lucide-react";
 import { Container } from "../components/ui/Container";
 import { Reveal } from "../components/ui/Reveal";
 import { Button } from "../components/ui/Button";
-import { formatHighlights } from "../data/cohorts";
+import { formatHighlights, encontrosPresenciais } from "../data/cohorts";
 
 const icons = { calendar: CalendarDays, "map-pin": MapPin, clock: Clock };
 
@@ -51,7 +51,25 @@ export function FinalCTA() {
             })}
           </div>
 
-          <Reveal delay={420} className="mt-4">
+          <Reveal delay={400} className="mt-6 w-full max-w-[720px]">
+            <div className="rounded-2xl border border-white/15 bg-white/5 p-6 sm:p-7">
+              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-400">
+                Encontros presenciais em São Paulo
+              </p>
+              <div className="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">
+                {encontrosPresenciais.map((e) => (
+                  <div key={e.ord} className="flex flex-col gap-1 border-l-2 border-gold-400/40 pl-3 text-left">
+                    <span className="text-[11px] font-medium uppercase tracking-[0.06em] text-white/50">
+                      {e.ord}
+                    </span>
+                    <span className="text-[13.5px] font-bold text-white">{e.date}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={480} className="mt-2">
             <Button href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="ghost" size="lg">
               Quero falar com um consultor
             </Button>

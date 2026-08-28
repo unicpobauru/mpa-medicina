@@ -27,7 +27,7 @@ export function Hero() {
           <div className="mx-auto flex max-w-[760px] flex-col items-center gap-6 text-center">
             <span className="eyebrow text-white/80">
               <span className="h-px w-6 bg-gold-400" aria-hidden />
-              Exclusivo para médicos · Grupo UniCPO
+              Exclusivo para médicos
             </span>
             <h1
               className="text-balance font-extrabold leading-[1.08] tracking-[-0.02em] text-white"
@@ -36,10 +36,28 @@ export function Hero() {
               Posicione-se como o médico de referência que seus pacientes já estão procurando.
             </h1>
             <p className="max-w-[560px] text-[16px] leading-relaxed text-white/75 sm:text-lg">
-              Pós-Graduação em Medicina Metabólica e Longevidade — 400 horas de formação
-              multidimensional, com 9 especialistas de referência e encontros presenciais em
-              São Paulo.
+              Pós-Graduação em Medicina Metabólica e Longevidade
+              <br />
+              400 horas de formação multidimensional.
             </p>
+
+            <div className="mt-1 flex flex-col items-center gap-2 rounded-2xl border border-gold-400/30 bg-white/[0.06] px-6 py-4 backdrop-blur-sm sm:px-8">
+              <div className="flex items-center gap-5 sm:gap-8">
+                <div className="flex flex-col items-center gap-0.5">
+                  <span className="text-2xl font-extrabold leading-none text-white sm:text-3xl">75%</span>
+                  <span className="text-[11px] uppercase tracking-[0.12em] text-gold-200">Online</span>
+                </div>
+                <span className="text-lg font-light text-white/30" aria-hidden>|</span>
+                <div className="flex flex-col items-center gap-0.5">
+                  <span className="text-2xl font-extrabold leading-none text-white sm:text-3xl">25%</span>
+                  <span className="text-[11px] uppercase tracking-[0.12em] text-gold-200">Presencial</span>
+                </div>
+              </div>
+              <span className="text-[12.5px] leading-snug text-white/65">
+                Encontros presenciais em São Paulo
+              </span>
+            </div>
+
             <Button href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="primary" size="lg" className="mt-2">
               Falar com um consultor
             </Button>

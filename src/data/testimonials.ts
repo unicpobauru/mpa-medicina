@@ -8,46 +8,36 @@ export interface Testimonial {
 }
 
 /**
- * ⚠️ Ilustrativos — o MPA ainda não tem turmas formadas, então não existem
- * depoimentos reais. Reemplazar por depoimentos reais (nome, foto, cidade
- * e Instagram) assim que a primeira turma concluir os módulos e antes de
- * publicar a página. Mesmo critério já usado nos outros sites do grupo.
+ * Depoimentos de alunos do Grupo UniCPO (replicados do site do Diplomado em
+ * Mini-Implantes, traduzidos para o Português). O MPA ainda não tem turma
+ * formada — substituir por depoimentos de médicos do MPA após a primeira turma.
  */
 export const testimonials: Testimonial[] = [
   {
-    name: "Médico MPA",
-    location: "",
-    course: "Pós-Graduação em Medicina Metabólica e Longevidade",
+    name: "Karlita Romero",
+    location: "Equador",
+    course: "Aluna do Grupo UniCPO",
     quote:
-      "A formação uniu ciência, prática e estratégia de negócio — algo que eu não encontrava em nenhuma outra pós da área.",
-    image: "STUDENT_IMAGE_01",
-    instagram: null,
+      "Se eu não tivesse vindo, a verdade é que não teria nenhuma segurança para atender meus pacientes, nem mesmo para abrir minha própria clínica, porque **a prática e a teoria fazem o mestre**. Recomendo demais, porque conta com qualidade, tecnologia, **pacientes reais** e professores de primeiro nível.",
+    image: "images/testimonial-karlita.jpg",
+    instagram: "https://www.instagram.com/p/DRerzxpEbG9/",
   },
   {
-    name: "Médica MPA",
-    location: "",
-    course: "Pós-Graduação em Medicina Metabólica e Longevidade",
+    name: "Yndiana Garrido",
+    location: "Venezuela",
+    course: "Aluna do Grupo UniCPO",
     quote:
-      "Os encontros presenciais em São Paulo fizeram toda a diferença — trocar com outros médicos de alto nível acelerou muito minha curva de aprendizado.",
-    image: "STUDENT_IMAGE_02",
-    instagram: null,
+      "**Tudo o que vi no Instagram correspondeu à experiência que encontrei aqui**. Minha primeira impressão foi: quero fazer minha especialização aqui. Aprendi demais e posso dizer que **valeu cada centavo que investi**.",
+    image: "images/testimonial-yndiana.jpg",
+    instagram: "https://www.instagram.com/p/DbJcG4TvEFO/",
   },
   {
-    name: "Médico MPA",
-    location: "",
-    course: "Pós-Graduação em Medicina Metabólica e Longevidade",
+    name: "Mackarena del Pilar",
+    location: "Chile",
+    course: "Aluna do Grupo UniCPO",
     quote:
-      "As 50 horas de gestão e posicionamento mudaram a forma como eu precifico e comunico meus programas premium.",
-    image: "STUDENT_IMAGE_03",
-    instagram: null,
-  },
-  {
-    name: "Médica MPA",
-    location: "",
-    course: "Pós-Graduação em Medicina Metabólica e Longevidade",
-    quote:
-      "Mentoria direta com quem está na fronteira da medicina do emagrecimento e da longevidade — exatamente o que eu procurava.",
-    image: "STUDENT_IMAGE_04",
-    instagram: null,
+      "Para mim, vir para o Brasil agora significou **uma virada de chave importante** com relação à minha formação e ao que aprendi aqui. Eles realmente **te ensinam como a clínica funciona na prática**.",
+    image: "images/testimonial-mackarena.jpg",
+    instagram: "https://www.instagram.com/p/DZs2h4Fh2bS/",
   },
 ];

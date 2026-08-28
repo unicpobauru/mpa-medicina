@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { WHATSAPP_URL } from "../lib/whatsapp";
-import { Award, Users, TrendingUp } from "lucide-react";
+import { Award, Users, TrendingUp, FlaskConical } from "lucide-react";
 import { Container } from "../components/ui/Container";
-import { SectionHeading } from "../components/ui/SectionHeading";
 import { Reveal } from "../components/ui/Reveal";
 import { Button } from "../components/ui/Button";
 import { differentials, type Differential } from "../data/differentials";
 
-const icons = { award: Award, users: Users, "trending-up": TrendingUp };
+const icons = { award: Award, users: Users, "trending-up": TrendingUp, flask: FlaskConical };
 
 /** Shows the video once it exists at its path; falls back to the still photo if it 404s (or before it's uploaded). */
 function DifferentialMedia({ item }: { item: Differential }) {
@@ -32,37 +31,54 @@ function DifferentialMedia({ item }: { item: Differential }) {
       src={item.image}
       alt=""
       aria-hidden
-      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+      className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
     />
   );
 }
 
 export function Differentials() {
   return (
-    <section className="bg-soft py-20 sm:py-24 lg:py-32">
+    <section className="bg-soft py-24 sm:py-28 lg:py-36">
       <Container>
-        <SectionHeading
-          align="center"
-          eyebrow="MPA · Diferenciais"
-          title="Nossos principais diferenciais"
-          description="Uma formação pensada para médicos de alto padrão, com ciência, prática e estratégia de posicionamento desde o primeiro módulo."
-          className="max-w-[640px]"
-        />
+        <div className="mx-auto flex max-w-[720px] flex-col items-center gap-5 text-center">
+          <Reveal>
+            <span className="eyebrow">
+              <span className="h-px w-6 bg-gold-500" aria-hidden />
+              MPA · Diferenciais
+            </span>
+          </Reveal>
+          <Reveal delay={80}>
+            <h2
+              className="text-balance font-extrabold leading-[1.1] tracking-[-0.015em] text-ink"
+              style={{ fontSize: "clamp(2rem, 1.5rem + 2.4vw, 3.25rem)" }}
+            >
+              O paciente que você quer atrair já existe
+            </h2>
+          </Reveal>
+          <Reveal delay={140}>
+            <p className="text-[15px] leading-relaxed text-ink/65 sm:text-lg">
+              Ele só está esperando um médico preparado para atendê-lo.
+              <br />
+              Dê o próximo passo e alavanque sua carreira na medicina premium.
+            </p>
+          </Reveal>
+        </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
           {differentials.map((item, i) => {
             const Icon = icons[item.icon as keyof typeof icons];
             return (
               <Reveal key={item.title} delay={i * 90}>
-                <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-white shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-gold-400/40 hover:shadow-card-hover">
-                  <div className="relative aspect-[4/5] w-full overflow-hidden">
+                <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-white shadow-card ring-1 ring-transparent transition-all duration-300 hover:-translate-y-2 hover:border-gold-400/50 hover:shadow-card-hover hover:ring-gold-400/20">
+                  <div className="relative aspect-[3/4] w-full overflow-hidden">
                     <DifferentialMedia item={item} />
-                    <div className="absolute bottom-4 left-4 flex h-11 w-11 items-center justify-center rounded-full bg-ink text-gold-400 shadow-md transition-colors duration-300 group-hover:bg-gold-500 group-hover:text-white">
-                      <Icon className="h-5 w-5" strokeWidth={2} />
+                    <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink/70 to-transparent" aria-hidden />
+                    <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-full bg-gold-500 text-ink shadow-lg transition-transform duration-300 group-hover:scale-110">
+                      <Icon className="h-5 w-5" strokeWidth={2.25} />
                     </div>
                   </div>
-                  <div className="flex flex-1 flex-col gap-3 p-7">
-                    <h3 className="text-xl font-bold leading-snug text-ink">{item.title}</h3>
+                  <div className="flex flex-1 flex-col gap-2.5 p-7">
+                    <h3 className="text-[1.35rem] font-bold leading-snug text-ink">{item.title}</h3>
                     <p className="text-[15px] leading-relaxed text-ink/60">{item.description}</p>
                   </div>
                 </div>
@@ -71,7 +87,7 @@ export function Differentials() {
           })}
         </div>
 
-        <Reveal delay={260} className="mt-14 flex justify-center">
+        <Reveal delay={260} className="mt-16 flex justify-center">
           <Button href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="primary" size="lg">
             Falar com um consultor
           </Button>

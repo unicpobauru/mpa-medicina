@@ -11,7 +11,7 @@ export function Methodology() {
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-20">
           <Reveal className="order-2 lg:order-1">
             <img
-              src="images/dna-metodologia.jpg"
+              src="images/metodologia-mpa.jpg"
               alt="Medicina Metabólica e Longevidade — visão integrada do paciente"
               className="aspect-[4/5] w-full rounded-3xl object-cover"
             />
@@ -31,6 +31,11 @@ export function Methodology() {
               >
                 Do tratamento reativo à prevenção ativa.
               </h2>
+            </Reveal>
+            <Reveal delay={110}>
+              <p className="text-[15px] font-semibold text-gold-600 sm:text-base">
+                Antecipe os riscos. Amplie a longevidade.
+              </p>
             </Reveal>
             <Reveal delay={140}>
               <p className="max-w-[540px] text-[15px] leading-relaxed text-ink/65 sm:text-base">
