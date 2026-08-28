@@ -1,4 +1,4 @@
-import { ArrowRight, TrendingUp } from "lucide-react";
+import { ArrowUpRight, TrendingUp } from "lucide-react";
 import { Container } from "../components/ui/Container";
 import { Reveal } from "../components/ui/Reveal";
 import { CountUp } from "../components/ui/CountUp";
@@ -37,17 +37,17 @@ export function MarketScenario() {
                     <span className="text-[11px] font-medium text-ink/40">{stat.fromYear}</span>
                     <span className="text-lg font-bold text-ink/45">{stat.fromText}</span>
                   </div>
-                  <ArrowRight className="mb-1 h-4 w-4 shrink-0 text-gold-500" strokeWidth={2.5} />
+                  <ArrowUpRight className="mb-1 h-5 w-5 shrink-0 text-red-600" strokeWidth={2.75} />
                   <div className="flex flex-col">
-                    <span className="text-[11px] font-medium text-gold-600">{stat.toYear}</span>
+                    <span className="text-[11px] font-medium text-red-600">{stat.toYear}</span>
                     <span
-                      className="font-extrabold leading-none text-ink"
+                      className="font-extrabold leading-none text-red-600"
                       style={{ fontSize: "clamp(2rem, 1.5rem + 1.6vw, 2.75rem)" }}
                     >
                       <StatValue stat={stat} />
                     </span>
                   </div>
-                  <span className="mb-1 inline-flex items-center gap-1 rounded-full bg-gold-200 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.04em] text-ink">
+                  <span className="mb-1 inline-flex items-center gap-1 rounded-full bg-red-100 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.04em] text-red-700">
                     <TrendingUp className="h-3 w-3" strokeWidth={2.5} />
                     {stat.badge}
                   </span>

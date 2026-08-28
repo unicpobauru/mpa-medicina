@@ -28,10 +28,10 @@ function App() {
         <Hero />
         <Quote />
         <MarketScenario />
-        <Differentials />
-        <About />
-        <Stats />
         <CoordinatorVideo />
+        <Stats />
+        <About />
+        <Differentials />
         <Methodology />
         <Modules />
         <Faculty />

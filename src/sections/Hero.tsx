@@ -12,7 +12,7 @@ export function Hero() {
           <img
             src="images/hero-mpa.jpg"
             alt="Médico de vanguarda — MPA Medical Performance Academy"
-            className="h-full min-h-[640px] w-full object-cover sm:min-h-[720px] lg:min-h-[860px]"
+            className="h-full min-h-[640px] w-full object-cover object-[72%_30%] sm:min-h-[720px] sm:object-center lg:min-h-[860px]"
           />
           <div
             className="absolute inset-0"
@@ -24,7 +24,7 @@ export function Hero() {
         </div>
 
         <Container className="relative z-10 pb-32 pt-32 sm:pt-40 lg:pb-48 lg:pt-44">
-          <div className="mx-auto flex max-w-[760px] flex-col items-center gap-6 text-center">
+          <div className="mx-auto flex max-w-[760px] flex-col items-center gap-6 text-center [text-shadow:0_1px_12px_rgba(5,11,22,0.5)]">
             <span className="eyebrow text-white/80">
               <span className="h-px w-6 bg-gold-400" aria-hidden />
               Exclusivo para médicos
