@@ -12,7 +12,7 @@ export function Hero() {
           <img
             src="images/hero-mpa.jpg"
             alt="Médico de vanguarda — MPA Medical Performance Academy"
-            className="h-full min-h-[640px] w-full object-cover object-[72%_30%] sm:min-h-[720px] sm:object-center lg:min-h-[860px]"
+            className="h-full min-h-[640px] w-full -scale-x-100 object-cover object-[72%_30%] sm:min-h-[720px] sm:object-center lg:min-h-[860px]"
           />
           <div
             className="absolute inset-0"
