@@ -2,7 +2,8 @@
 
 O formulário do topo do site envia os dados para o Web App do Google Apps Script
 configurado em `src/lib/leadForm.ts` (`GOOGLE_SCRIPT_URL`). O envio é um `POST`
-com corpo JSON, `Content-Type: text/plain` (para não disparar preflight CORS).
+`application/x-www-form-urlencoded` — os campos chegam em `e.parameter` do
+Apps Script (e o corpo cru em `e.postData.contents`). Não dispara preflight CORS.
 
 ## Código do Apps Script (cole este, exatamente)
 
@@ -35,13 +36,13 @@ function doPost(e) {
       return "";
     }
 
-    var data = pick(["data", "Data", "fecha", "date", "timestamp"]) ||
+    var data = pick(["data", "Data", "dataHora", "fecha", "date", "timestamp"]) ||
       Utilities.formatDate(new Date(), "America/Sao_Paulo", "dd-MM-yyyy HH:mm:ss");
     var nome = pick(["nome", "Nome", "nome_completo", "nomeCompleto", "nombre", "name"]);
-    var tel = pick(["telefone", "Telefone", "telefono", "phone", "celular", "whatsapp"]);
+    var tel = pick(["telefone", "Telefone", "celular", "whatsapp", "telefono", "phone"]);
     var email = pick(["email", "Email", "e-mail", "mail"]);
-    var medico = pick(["medico", "ehMedico", "esOdontologo", "isDoctor"]);
-    var tag = pick(["tag", "Tag", "origem"]);
+    var medico = pick(["medico", "ehMedico", "funcao", "exerceFuncao", "jaExerce", "esOdontologo"]);
+    var tag = pick(["tag", "Tag", "origem", "Origem"]);
 
     if (sheet.getLastRow() === 0) {
       sheet.appendRow(["Data", "Nome", "Telefone", "E-mail", "É médico?", "Tag"]);

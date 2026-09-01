@@ -39,60 +39,68 @@ function formatDataBR(date: Date): string {
 /**
  * Envia os dados para a Planilha Google.
  *
- * - `fetch` (não `sendBeacon`): agora a pessoa continua na página depois do
- *   envio, então não há pressa de "unload" — e o `sendBeacon` costuma chegar
- *   com corpo vazio no Apps Script, deixando a linha em branco.
- * - Sem header `Content-Type` custom: o corpo string vai como
- *   `text/plain;charset=UTF-8`, que NÃO dispara preflight CORS e chega em
- *   `e.postData.contents` do lado do Apps Script.
- * - As chaves vão repetidas em PT/ES/EN e em algumas variações de caixa,
- *   para cair na coluna certa seja qual for o `doPost` do cliente.
+ * Vai como `application/x-www-form-urlencoded` (não JSON): assim os campos
+ * caem em `e.parameter` do Apps Script — que é o que a maioria dos scripts
+ * lê — e o corpo também fica disponível em `e.postData.contents`. Esse
+ * Content-Type é "CORS-safelisted", então NÃO dispara preflight.
+ *
+ * `fetch` (não `sendBeacon`): a pessoa continua na página depois do envio,
+ * então não há pressa de "unload" — e o `sendBeacon` costuma chegar com
+ * corpo vazio no Apps Script, deixando a linha em branco.
+ *
+ * Cada valor é enviado sob VÁRIAS chaves (PT / variações de caixa / ES) para
+ * cair na coluna certa seja qual for o nome do campo esperado pelo script.
  */
 export function logToGoogleSheet(data: LeadFormData): void {
   if (!GOOGLE_SCRIPT_URL) return;
 
   const dataBR = formatDataBR(new Date());
-  const payload = JSON.stringify({
+  const fields: Record<string, string> = {
     nome: data.nome,
     Nome: data.nome,
+    nomeCompleto: data.nome,
+    nome_completo: data.nome,
     nombre: data.nome,
     name: data.nome,
-    nomeCompleto: data.nome,
 
     telefone: data.telefone,
     Telefone: data.telefone,
-    telefono: data.telefone,
-    phone: data.telefone,
     celular: data.telefone,
     whatsapp: data.telefone,
+    telefono: data.telefone,
+    phone: data.telefone,
 
     email: data.email,
     Email: data.email,
-    "e-mail": data.email,
     mail: data.email,
 
     medico: data.medico,
     ehMedico: data.medico,
+    funcao: data.medico,
+    exerceFuncao: data.medico,
+    jaExerce: data.medico,
     esOdontologo: data.medico,
-    isDoctor: data.medico,
 
+    origem: "site",
+    Origem: "site",
     tag: LEAD_TAG,
     Tag: LEAD_TAG,
-    origem: LEAD_TAG,
 
     data: dataBR,
     Data: dataBR,
+    dataHora: dataBR,
     fecha: dataBR,
     timestamp: dataBR,
     date: dataBR,
-  });
+  };
 
   fetch(GOOGLE_SCRIPT_URL, {
     method: "POST",
     mode: "no-cors",
     keepalive: true,
     redirect: "follow",
-    body: payload,
+    headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+    body: new URLSearchParams(fields).toString(),
   }).catch(() => {
     /* silencioso de propósito — a UI de sucesso não depende da resposta */
   });
