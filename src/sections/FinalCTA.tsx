@@ -1,4 +1,4 @@
-import { WHATSAPP_URL } from "../lib/whatsapp";
+import { FORM_HREF } from "../lib/cta";
 import { CalendarDays, MapPin, Clock } from "lucide-react";
 import { Container } from "../components/ui/Container";
 import { Reveal } from "../components/ui/Reveal";
@@ -27,7 +27,7 @@ export function FinalCTA() {
           </Reveal>
           <Reveal delay={100}>
             <p className="max-w-[560px] text-[15px] leading-relaxed text-white/65 sm:text-base">
-              Vagas limitadas por turma — fale com um consultor e garanta a sua.
+              Vagas limitadas por turma — preencha o formulário e garanta a sua.
             </p>
           </Reveal>
 
@@ -37,9 +37,7 @@ export function FinalCTA() {
               return (
                 <Reveal key={item.label} delay={140 + i * 90}>
                   <a
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noreferrer"
+                    href={FORM_HREF}
                     className="group flex h-full flex-col items-start gap-3 rounded-2xl border border-white/15 bg-white/5 p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-gold-400/40 hover:bg-white/10"
                   >
                     <Icon className="h-5 w-5 text-gold-400" strokeWidth={1.75} />
@@ -70,8 +68,8 @@ export function FinalCTA() {
           </Reveal>
 
           <Reveal delay={480} className="mt-2">
-            <Button href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="ghost" size="lg">
-              Quero falar com um consultor
+            <Button href={FORM_HREF} variant="ghost" size="lg">
+              Quero garantir minha vaga
             </Button>
           </Reveal>
         </div>

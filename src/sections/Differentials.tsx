@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { WHATSAPP_URL } from "../lib/whatsapp";
+import { FORM_HREF } from "../lib/cta";
 import { Award, Users, TrendingUp, FlaskConical } from "lucide-react";
 import { Container } from "../components/ui/Container";
 import { Reveal } from "../components/ui/Reveal";
@@ -88,8 +88,8 @@ export function Differentials() {
         </div>
 
         <Reveal delay={260} className="mt-16 flex justify-center">
-          <Button href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="primary" size="lg">
-            Falar com um consultor
+          <Button href={FORM_HREF} variant="primary" size="lg">
+            Fazer minha inscrição
           </Button>
         </Reveal>
       </Container>

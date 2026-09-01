@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { WHATSAPP_URL } from "../lib/whatsapp";
+import { FORM_HREF } from "../lib/cta";
 import { Quote as QuoteIcon } from "lucide-react";
 import { Container } from "../components/ui/Container";
 import { SectionHeading } from "../components/ui/SectionHeading";
@@ -40,9 +40,9 @@ export function Testimonials() {
         <SectionHeading
           align="center"
           tone="dark"
-          eyebrow="MPA · Resultados reais"
-          title="Doutores que se formaram com a gente"
-          description="Profissionais de diferentes especialidades já vivem a experiência e aplicam a formação em sua prática clínica."
+          eyebrow="MPA · Quem ensina"
+          title="A palavra de quem vai te formar"
+          description="Os médicos que constroem o MPA resumem, em uma frase, por que essa é a formação para quem quer se posicionar."
           className="mx-auto max-w-[640px]"
         />
 
@@ -72,14 +72,9 @@ export function Testimonials() {
                 <p className="flex-1 text-[14px] italic leading-relaxed text-white/80">
                   &ldquo;{renderBold(t.quote, "dark")}&rdquo;
                 </p>
-                <div className="flex flex-col items-center gap-2">
-                  <div>
-                    <p className="text-[13px] font-semibold text-gold-200">{t.name}</p>
-                    <p className="text-[12px] text-white/45">{t.location}</p>
-                  </div>
-                  <span className="rounded-full bg-white/10 px-2.5 py-1 text-[10.5px] font-medium text-white/70">
-                    {t.course}
-                  </span>
+                <div className="flex flex-col items-center gap-1">
+                  <p className="text-[13px] font-semibold text-gold-200">{t.name}</p>
+                  <p className="text-[12px] text-white/45">{t.role}</p>
                 </div>
               </article>
             </Reveal>
@@ -87,8 +82,8 @@ export function Testimonials() {
         </div>
 
         <Reveal delay={260} className="mt-14 flex justify-center">
-          <Button href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="ghost" size="lg">
-            Falar com um consultor
+          <Button href={FORM_HREF} variant="ghost" size="lg">
+            Garanta sua vaga
           </Button>
         </Reveal>
       </Container>

@@ -1,4 +1,4 @@
-import { WHATSAPP_URL } from "../lib/whatsapp";
+import { FORM_HREF } from "../lib/cta";
 import { useState } from "react";
 import { Container } from "../components/ui/Container";
 import { Reveal } from "../components/ui/Reveal";
@@ -25,13 +25,13 @@ export function FAQ() {
                 className="text-balance font-extrabold leading-[1.12] tracking-[-0.01em] text-ink"
                 style={{ fontSize: "clamp(1.75rem, 1.35rem + 1.8vw, 2.75rem)" }}
               >
-                Antes de falar com um consultor
+                Antes de se inscrever
               </h2>
             </Reveal>
           </div>
           <Reveal delay={140}>
-            <Button href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="secondary" size="md">
-              Falar com um consultor
+            <Button href={FORM_HREF} variant="secondary" size="md">
+              Fazer minha inscrição
             </Button>
           </Reveal>
         </div>

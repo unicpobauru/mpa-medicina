@@ -53,20 +53,21 @@ npm run preview    # serve o build de produção localmente
 
 ## O que falta completar antes de publicar
 
-- **WhatsApp**: `src/lib/whatsapp.ts` está com um placeholder `[WHATSAPP_MPA]` — trocar pelo
-  número real (formato `55DDDNUMERO`) assim que o cliente definir.
-- **Testemunhos** (`src/data/testimonials.ts`): hoje são 4 depoimentos reais de alunos do
-  Grupo UniCPO, replicados do site do Diplomado em Mini-Implantes e traduzidos para o
-  Português (Karlita Romero/Equador — em vídeo, no bloco destaque; Felipe Acevedo/Chile;
-  Yndiana Garrido/Venezuela; Mackarena del Pilar/Chile). Trocar por depoimentos de médicos
-  do MPA após a primeira turma.
+- **Contato**: o site NÃO usa mais WhatsApp. Todos os CTAs (`src/lib/cta.ts` → `FORM_HREF`)
+  levam ao formulário de inscrição no topo da Hero (`id="formulario"`). O envio grava uma
+  linha na Planilha Google via Apps Script (`src/lib/leadForm.ts` → `GOOGLE_SCRIPT_URL`).
+  O payload manda os campos com nomes em PT e ES ao mesmo tempo — confirmar com o cliente
+  em que colunas os dados caíram na primeira inscrição de teste.
+- **Seção "A palavra de quem vai te formar"** (`src/data/testimonials.ts`): falas de
+  posicionamento dos próprios professores (Glauco / Thaís Moreschi / Maurício Mosna),
+  escritas por nós — não são depoimentos de alunos (a 1ª turma ainda não se formou).
 - **Seções ocultadas a pedido do cliente**: `Facility` (infraestrutura) e a linha do tempo de
   `About` — os componentes/dados continuam no repositório; ver comentários em `App.tsx`.
 - **Datas da turma**: já preenchidas com as datas reais do PPT em `src/data/cohorts.ts`
   (início 06/02/2027 + 4 encontros presenciais) e citadas na FAQ. Confirmar com o cliente antes
   de publicar.
 - **Preço**: por decisão do cliente, o investimento (18x R$4.997 / oferta fundador R$2.998 +
-  matrícula R$997, conforme o PPT) **não** é exibido na página — fluxo 100% "fale com um consultor".
+  matrícula R$997, conforme o PPT) **não** é exibido na página — fluxo 100% "preencha o formulário".
 - **CRM/RQE dos professores**: atualizados conforme o PPT (slides 15–18). Alguns números
   mudaram em relação à versão anterior do site — conferir com o cliente (ver `src/data/faculty.ts`).
 
@@ -80,7 +81,7 @@ src/
                           # Footer — VirtualTour existe mas não é usado (ver acima)
   data/                   # conteúdo separado dos componentes (nav, about, faq, modules, etc.)
   hooks/useScrolled.ts    # header transparente → sólido
-  lib/                    # whatsapp.ts (link único de contato), renderBold.tsx
+  lib/                    # cta.ts (#formulario), leadForm.ts (envio p/ Planilha), renderBold.tsx
   index.css               # design tokens (@theme) com a paleta MPA
 ```
 

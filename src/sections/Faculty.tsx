@@ -1,4 +1,4 @@
-import { WHATSAPP_URL } from "../lib/whatsapp";
+import { FORM_HREF } from "../lib/cta";
 import { Container } from "../components/ui/Container";
 import { SectionHeading } from "../components/ui/SectionHeading";
 import { Reveal } from "../components/ui/Reveal";
@@ -51,8 +51,8 @@ export function Faculty() {
         </div>
 
         <Reveal delay={260} className="mt-14 flex justify-center">
-          <Button href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="primary" size="lg">
-            Falar com um consultor
+          <Button href={FORM_HREF} variant="primary" size="lg">
+            Fazer minha inscrição
           </Button>
         </Reveal>
       </Container>

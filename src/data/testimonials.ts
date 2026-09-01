@@ -1,43 +1,39 @@
 export interface Testimonial {
   name: string;
-  location: string;
-  course: string;
+  role: string;
   quote: string;
   image: string;
   instagram: string | null;
 }
 
 /**
- * Depoimentos de alunos do Grupo UniCPO (replicados do site do Diplomado em
- * Mini-Implantes, traduzidos para o Português). O MPA ainda não tem turma
- * formada — substituir por depoimentos de médicos do MPA após a primeira turma.
+ * Falas dos próprios professores do MPA sobre por que a formação existe e
+ * para quem ela é — posicionamento, não depoimento de aluno (a primeira
+ * turma ainda não se formou). O Dr. Glauco Melo, coordenador, vem primeiro.
  */
 export const testimonials: Testimonial[] = [
   {
-    name: "Karlita Romero",
-    location: "Equador",
-    course: "Aluna do Grupo UniCPO",
+    name: "Dr. Glauco Melo",
+    role: "Coordenador do MPA",
     quote:
-      "Se eu não tivesse vindo, a verdade é que não teria nenhuma segurança para atender meus pacientes, nem mesmo para abrir minha própria clínica, porque **a prática e a teoria fazem o mestre**. Recomendo demais, porque conta com qualidade, tecnologia, **pacientes reais** e professores de primeiro nível.",
-    image: "images/testimonial-karlita.jpg",
-    instagram: "https://www.instagram.com/p/DRerzxpEbG9/",
+      "Criei o MPA para o médico que já entendeu que dominar a clínica não basta. Aqui a gente une **ciência, prática e um modelo de negócio** que sustenta a autoridade que você constrói.",
+    image: "images/esp-glauco-melo.jpg",
+    instagram: "https://www.instagram.com/drglaucomelo/",
   },
   {
-    name: "Yndiana Garrido",
-    location: "Venezuela",
-    course: "Aluna do Grupo UniCPO",
+    name: "Dra. Thaís Moreschi",
+    role: "Professora · Emagrecimento e Obesidade",
     quote:
-      "**Tudo o que vi no Instagram correspondeu à experiência que encontrei aqui**. Minha primeira impressão foi: quero fazer minha especialização aqui. Aprendi demais e posso dizer que **valeu cada centavo que investi**.",
-    image: "images/testimonial-yndiana.jpg",
-    instagram: "https://www.instagram.com/p/DbJcG4TvEFO/",
+      "A medicina metabólica é a área que mais cresce hoje — e o MPA entrega o **protocolo aplicável**, não só a teoria. É a formação que eu gostaria de ter feito no início da minha jornada.",
+    image: "images/esp-thais-moreschi.jpg",
+    instagram: "https://www.instagram.com/dra.thaismoreschi/",
   },
   {
-    name: "Mackarena del Pilar",
-    location: "Chile",
-    course: "Aluna do Grupo UniCPO",
+    name: "Dr. Maurício Mosna",
+    role: "Professor · Lipedema e Longevidade",
     quote:
-      "Para mim, vir para o Brasil agora significou **uma virada de chave importante** com relação à minha formação e ao que aprendi aqui. Eles realmente **te ensinam como a clínica funciona na prática**.",
-    image: "images/testimonial-mackarena.jpg",
-    instagram: "https://www.instagram.com/p/DZs2h4Fh2bS/",
+      "O que diferencia o MPA é a **visão integrada**: o paciente não cabe em uma única especialidade. O médico sai daqui enxergando metabolismo, hormônios e longevidade como um sistema só.",
+    image: "images/esp-mauricio-mosna.jpg",
+    instagram: "https://www.instagram.com/dr.mauriciomosna/",
   },
 ];

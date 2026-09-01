@@ -33,13 +33,13 @@ export const faqItems: FaqItem[] = [
     number: "05",
     question: "Há opções de pagamento?",
     answer:
-      "Sim, um consultor acadêmico apresenta as condições e opções de parcelamento disponíveis durante a conversa de orientação.",
+      "Sim. A equipe acadêmica apresenta as condições e opções de parcelamento disponíveis no contato após a inscrição.",
   },
   {
     number: "06",
     question: "Quando começa a turma e quando são os encontros presenciais?",
     answer:
-      "A turma tem início em 06/02/2027, com 4 encontros presenciais em São Paulo: 08 e 09/05/2027, 04 e 05/09/2027, 05 e 06/02/2028 e 01 e 02/07/2028. Fale com um consultor para garantir sua vaga.",
+      "A turma tem início em 06/02/2027, com 4 encontros presenciais em São Paulo: 08 e 09/05/2027, 04 e 05/09/2027, 05 e 06/02/2028 e 01 e 02/07/2028. Preencha o formulário no topo da página para garantir sua vaga.",
   },
   {
     number: "07",
@@ -49,8 +49,8 @@ export const faqItems: FaqItem[] = [
   },
   {
     number: "08",
-    question: "Como falo com um consultor acadêmico?",
+    question: "Como faço a minha inscrição?",
     answer:
-      "Toque qualquer botão \"Falar com um consultor\" desta página — você será direcionado direto para o WhatsApp da equipe do MPA.",
+      "Preencha o formulário no topo desta página com nome, e-mail e telefone. A equipe acadêmica do MPA entra em contato para confirmar sua vaga e passar todos os detalhes de datas, investimento e pagamento.",
   },
 ];

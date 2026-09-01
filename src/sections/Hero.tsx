@@ -1,8 +1,41 @@
-import { WHATSAPP_URL } from "../lib/whatsapp";
-import { CheckCircle2, MessageCircle } from "lucide-react";
+import { FORM_HREF } from "../lib/cta";
+import { CheckCircle2 } from "lucide-react";
 import { Container } from "../components/ui/Container";
 import { Button } from "../components/ui/Button";
+import { LeadForm } from "../components/ui/LeadForm";
 import { trustPoints } from "../data/trustPoints";
+
+/** Sparkline verde que se "desenha" subindo ao carregar. */
+function TrendSpark() {
+  return (
+    <svg viewBox="0 0 64 32" className="h-8 w-16 shrink-0" fill="none" aria-hidden>
+      <polyline
+        points="2,28 14,21 26,24 38,13 50,16 62,4"
+        stroke="#34d399"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        pathLength={100}
+        strokeDasharray="100"
+        strokeDashoffset="100"
+      >
+        <animate
+          attributeName="stroke-dashoffset"
+          from="100"
+          to="0"
+          dur="1.4s"
+          begin="0.3s"
+          fill="freeze"
+          calcMode="spline"
+          keySplines="0.16 1 0.3 1"
+        />
+      </polyline>
+      <circle cx="62" cy="4" r="3" fill="#34d399" opacity="0">
+        <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.6s" fill="freeze" />
+      </circle>
+    </svg>
+  );
+}
 
 export function Hero() {
   return (
@@ -41,29 +74,18 @@ export function Hero() {
               400 horas de formação multidimensional.
             </p>
 
-            <div className="mt-1 flex flex-col items-center gap-2 rounded-2xl border border-gold-400/30 bg-white/[0.06] px-6 py-4 backdrop-blur-sm sm:px-8">
-              <div className="flex items-center gap-5 sm:gap-8">
-                <div className="flex flex-col items-center gap-0.5">
-                  <span className="text-2xl font-extrabold leading-none text-white sm:text-3xl">75%</span>
-                  <span className="text-[11px] uppercase tracking-[0.12em] text-gold-200">Online</span>
-                </div>
-                <span className="text-lg font-light text-white/30" aria-hidden>|</span>
-                <div className="flex flex-col items-center gap-0.5">
-                  <span className="text-2xl font-extrabold leading-none text-white sm:text-3xl">25%</span>
-                  <span className="text-[11px] uppercase tracking-[0.12em] text-gold-200">Presencial</span>
-                </div>
-              </div>
-              <span className="text-[12.5px] leading-snug text-white/65">
-                Encontros presenciais em São Paulo
-              </span>
+            <div className="mt-1 flex items-center gap-4 rounded-2xl border border-emerald-400/25 bg-emerald-400/[0.08] px-5 py-3.5 backdrop-blur-sm [text-shadow:none]">
+              <TrendSpark />
+              <p className="text-left text-[15px] font-semibold leading-snug text-white sm:text-base">
+                Aumente seu <span className="text-emerald-300">faturamento</span> e sua{" "}
+                <span className="text-emerald-300">autoridade médica</span>.
+              </p>
             </div>
 
-            <Button href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="primary" size="lg" className="mt-2">
-              Falar com um consultor
+            <Button href={FORM_HREF} variant="primary" size="lg" className="mt-2">
+              Garanta sua vaga
             </Button>
-            <span className="text-[12px] text-white/50">
-              Resposta por WhatsApp em até 24h · Vagas limitadas por turma
-            </span>
+            <span className="text-[12px] text-white/50">Vagas limitadas por turma</span>
           </div>
         </Container>
       </div>
@@ -89,29 +111,23 @@ export function Hero() {
               </ul>
             </div>
 
-            <div className="flex flex-col items-center justify-center gap-6 border-t border-white/10 bg-white/[0.03] p-8 text-center sm:p-10 lg:border-l lg:border-t-0 lg:p-14">
+            <div
+              id="formulario"
+              className="flex scroll-mt-24 flex-col items-center gap-4 border-t border-white/10 bg-white/[0.03] p-8 text-center sm:p-10 lg:border-l lg:border-t-0 lg:p-12"
+            >
               <span className="eyebrow text-white/70">
                 <span className="h-px w-6 bg-gold-400" aria-hidden />
-                Contato direto
+                Inscrições abertas
               </span>
-              <div className="flex flex-col items-center gap-4">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-500 text-ink">
-                  <MessageCircle className="h-6 w-6" strokeWidth={1.75} />
-                </span>
-                <h3 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
-                  Fale com um consultor acadêmico
-                </h3>
-              </div>
-              <p className="max-w-xs text-[14px] leading-relaxed text-white/70">
-                Sem formulários: escreva pelo WhatsApp e tire suas dúvidas sobre datas,
-                investimento e formas de pagamento.
+              <h3 className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
+                Garanta sua vaga na turma
+              </h3>
+              <p className="max-w-xs text-[13.5px] leading-relaxed text-white/70">
+                Preencha seus dados — nossa equipe acadêmica retorna com datas, investimento e
+                próximos passos.
               </p>
-              <Button href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="ghost" size="lg" className="w-full">
-                Falar pelo WhatsApp
-              </Button>
-              <span className="text-[11px] text-white/40">
-                Resposta em até 24h · Vagas limitadas por turma
-              </span>
+              <LeadForm />
+              <span className="text-[11px] text-white/40">Vagas limitadas por turma</span>
             </div>
           </div>
         </Container>

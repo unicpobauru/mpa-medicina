@@ -1,4 +1,4 @@
-import { WHATSAPP_URL } from "../lib/whatsapp";
+import { FORM_HREF } from "../lib/cta";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Container } from "../components/ui/Container";
@@ -43,8 +43,8 @@ export function Header() {
           </nav>
 
           <div className="hidden lg:block">
-            <Button href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="primary" size="md">
-              Falar com um consultor
+            <Button href={FORM_HREF} variant="primary" size="md">
+              Garanta sua vaga
             </Button>
           </div>
 
@@ -79,8 +79,8 @@ export function Header() {
                 {link.label}
               </a>
             ))}
-            <Button href={WHATSAPP_URL} target="_blank" rel="noreferrer" variant="primary" size="md" className="mt-3 w-full" onClick={() => setMenuOpen(false)}>
-              Falar com um consultor
+            <Button href={FORM_HREF} variant="primary" size="md" className="mt-3 w-full" onClick={() => setMenuOpen(false)}>
+              Garanta sua vaga
             </Button>
           </nav>
         </Container>

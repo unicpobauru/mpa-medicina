@@ -1,7 +1,7 @@
-import { Phone, MapPin } from "lucide-react";
+import { PenLine, MapPin } from "lucide-react";
 import { Container } from "../components/ui/Container";
 import { navLinks } from "../data/nav";
-import { WHATSAPP_URL } from "../lib/whatsapp";
+import { FORM_HREF } from "../lib/cta";
 
 export function Footer() {
   return (
@@ -37,13 +37,11 @@ export function Footer() {
               Contato
             </h4>
             <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noreferrer"
+              href={FORM_HREF}
               className="flex items-center gap-2 text-[14px] text-white/55 transition-colors hover:text-gold-400"
             >
-              <Phone className="h-4 w-4 shrink-0" strokeWidth={1.75} />
-              Falar pelo WhatsApp
+              <PenLine className="h-4 w-4 shrink-0" strokeWidth={1.75} />
+              Fazer minha inscrição
             </a>
             <span className="flex items-start gap-2 text-[14px] text-white/55">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={1.75} />
