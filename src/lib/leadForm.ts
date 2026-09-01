@@ -1,22 +1,14 @@
 /**
  * Formulário próprio de inscrição do MPA (sem terceiros).
- * Ao enviar, registra uma linha em uma Planilha Google via Apps Script
- * ("fire and forget" — o Apps Script nem sempre expõe CORS legível do
- * navegador, por isso `no-cors`/`sendBeacon`: o request sai e a linha é
- * gravada, só não conseguimos ler a confirmação de volta).
- *
- * NÃO abre WhatsApp — o contato passa a ser feito pela equipe a partir do
- * lead gravado na planilha.
+ * Ao enviar, faz um POST para o Web App do Google Apps Script, que grava
+ * uma linha na Planilha Google. Não abre WhatsApp.
  */
 
 /** URL de implantação ("Web app") do Google Apps Script do cliente. */
 export const GOOGLE_SCRIPT_URL: string | null =
   "https://script.google.com/macros/s/AKfycbxdso2yQ3Ul2dzDpe89kM0MXLIpejpPLYMpbQYXyjv-i9qdX8qcNFQ3l9Gkz_1Xtvhl/exec";
 
-/**
- * Etiqueta fixa que viaja em CADA linha da planilha (coluna "Tag"), sem
- * aparecer no formulário. Serve para identificar a origem do dado.
- */
+/** Etiqueta fixa que viaja em CADA linha (coluna "Tag"), fora do formulário. */
 const LEAD_TAG = "[LP-MPA-FORM]";
 
 export interface LeadFormData {
@@ -45,10 +37,16 @@ function formatDataBR(date: Date): string {
 }
 
 /**
- * Envia os dados para a Planilha Google sem bloquear nem depender da
- * resposta. Manda os campos com nomes em PT e ES ao mesmo tempo, para
- * cair na coluna certa independentemente de como o Apps Script do cliente
- * leia o payload.
+ * Envia os dados para a Planilha Google.
+ *
+ * - `fetch` (não `sendBeacon`): agora a pessoa continua na página depois do
+ *   envio, então não há pressa de "unload" — e o `sendBeacon` costuma chegar
+ *   com corpo vazio no Apps Script, deixando a linha em branco.
+ * - Sem header `Content-Type` custom: o corpo string vai como
+ *   `text/plain;charset=UTF-8`, que NÃO dispara preflight CORS e chega em
+ *   `e.postData.contents` do lado do Apps Script.
+ * - As chaves vão repetidas em PT/ES/EN e em algumas variações de caixa,
+ *   para cair na coluna certa seja qual for o `doPost` do cliente.
  */
 export function logToGoogleSheet(data: LeadFormData): void {
   if (!GOOGLE_SCRIPT_URL) return;
@@ -56,29 +54,46 @@ export function logToGoogleSheet(data: LeadFormData): void {
   const dataBR = formatDataBR(new Date());
   const payload = JSON.stringify({
     nome: data.nome,
+    Nome: data.nome,
     nombre: data.nome,
-    telefone: data.telefone,
-    telefono: data.telefone,
-    email: data.email,
-    medico: data.medico,
-    esOdontologo: data.medico,
-    tag: LEAD_TAG,
-    data: dataBR,
-    fecha: dataBR,
-  });
+    name: data.nome,
+    nomeCompleto: data.nome,
 
-  if (typeof navigator !== "undefined" && navigator.sendBeacon) {
-    const blob = new Blob([payload], { type: "text/plain;charset=UTF-8" });
-    if (navigator.sendBeacon(GOOGLE_SCRIPT_URL, blob)) return;
-  }
+    telefone: data.telefone,
+    Telefone: data.telefone,
+    telefono: data.telefone,
+    phone: data.telefone,
+    celular: data.telefone,
+    whatsapp: data.telefone,
+
+    email: data.email,
+    Email: data.email,
+    "e-mail": data.email,
+    mail: data.email,
+
+    medico: data.medico,
+    ehMedico: data.medico,
+    esOdontologo: data.medico,
+    isDoctor: data.medico,
+
+    tag: LEAD_TAG,
+    Tag: LEAD_TAG,
+    origem: LEAD_TAG,
+
+    data: dataBR,
+    Data: dataBR,
+    fecha: dataBR,
+    timestamp: dataBR,
+    date: dataBR,
+  });
 
   fetch(GOOGLE_SCRIPT_URL, {
     method: "POST",
     mode: "no-cors",
     keepalive: true,
-    headers: { "Content-Type": "text/plain" },
+    redirect: "follow",
     body: payload,
   }).catch(() => {
-    /* silencioso de propósito */
+    /* silencioso de propósito — a UI de sucesso não depende da resposta */
   });
 }
