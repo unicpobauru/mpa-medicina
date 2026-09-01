@@ -62,16 +62,6 @@ export function Hero() {
               <span className="h-px w-6 bg-gold-400" aria-hidden />
               Exclusivo para médicos
             </span>
-            <div className="flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.07] py-1.5 pl-1.5 pr-4 backdrop-blur-sm [text-shadow:none]">
-              <img
-                src="images/selo-mec.png"
-                alt="Selo MEC — Faculdade Nota Máxima"
-                className="h-8 w-8 shrink-0 object-contain"
-              />
-              <span className="text-[12px] font-semibold text-white/85">
-                Faculdade nota máxima no MEC
-              </span>
-            </div>
             <h1
               className="text-balance font-extrabold leading-[1.08] tracking-[-0.02em] text-white"
               style={{ fontSize: "clamp(2.25rem, 1.6rem + 3vw, 3.75rem)" }}
@@ -83,6 +73,17 @@ export function Hero() {
               <br />
               400 horas de formação multidimensional.
             </p>
+
+            <div className="flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.07] py-1.5 pl-1.5 pr-4 backdrop-blur-sm [text-shadow:none]">
+              <img
+                src="images/selo-mec.png"
+                alt="Selo MEC — Faculdade Nota Máxima"
+                className="h-9 w-9 shrink-0 object-contain"
+              />
+              <span className="text-[12.5px] font-semibold text-white/85">
+                Estude em uma faculdade nota máxima no MEC
+              </span>
+            </div>
 
             <div className="mt-1 flex items-center gap-4 rounded-2xl border border-emerald-400/25 bg-emerald-400/[0.08] px-5 py-3.5 backdrop-blur-sm [text-shadow:none]">
               <TrendSpark />
