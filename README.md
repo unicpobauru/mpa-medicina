@@ -49,7 +49,7 @@ npm run preview    # serve o build de produção localmente
 | `dna-metodologia.jpg`, `dna-diferenciais.jpg` | imagens de fundo tech/DNA do deck | Metodologia e um card de Diferenciais |
 | `predio-fainter-01/02/03.jpg` | fotos reais da fachada FAINTER | Seção "O Grupo UniCPO" e carrossel de Infraestrutura |
 | `logo-fainter.png` | logo da FAINTER | Footer |
-| `esp-*.jpg` (9 arquivos) | fotos reais dos especialistas | Seção "Coordenação acadêmica" e "Corpo docente" |
+| `esp-*.jpg` (8 arquivos) | fotos reais dos especialistas | Seção "Coordenação acadêmica" e "Corpo docente" |
 
 ## O que falta completar antes de publicar
 
@@ -59,7 +59,7 @@ npm run preview    # serve o build de produção localmente
   O payload manda os campos com nomes em PT e ES ao mesmo tempo — confirmar com o cliente
   em que colunas os dados caíram na primeira inscrição de teste.
 - **Seção "A palavra de quem vai te formar"** (`src/data/testimonials.ts`): falas de
-  posicionamento dos próprios professores (Glauco / Thaís Moreschi / Maurício Mosna),
+  posicionamento dos próprios professores (Glauco / Manuela Satake / Maurício Mosna),
   escritas por nós — não são depoimentos de alunos (a 1ª turma ainda não se formou).
 - **Seções ocultadas a pedido do cliente**: `Facility` (infraestrutura) e a linha do tempo de
   `About` — os componentes/dados continuam no repositório; ver comentários em `App.tsx`.

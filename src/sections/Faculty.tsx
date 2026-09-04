@@ -14,13 +14,13 @@ export function Faculty() {
           align="center"
           eyebrow="MPA · Corpo docente"
           title="Quem forma você"
-          description="9 referências nacionais, cada um à frente de uma subespecialidade exclusiva da matriz curricular."
+          description="8 referências nacionais, cada um à frente de uma subespecialidade exclusiva da matriz curricular."
           className="max-w-[640px]"
         />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-3 lg:gap-6">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {faculty.map((member, i) => (
-            <Reveal key={member.name} delay={(i % 3) * 90}>
+            <Reveal key={member.name} delay={(i % 4) * 90}>
               <article className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover">
                 <div className="relative overflow-hidden bg-soft">
                   <img

@@ -15,13 +15,6 @@ export const faculty: FacultyMember[] = [
     instagram: "https://www.instagram.com/drglaucomelo/",
   },
   {
-    name: "Dra. Thaís Moreschi",
-    role: "Professora · Emagrecimento e Obesidade",
-    bio: "Médica pela Universidade Estadual de Maringá (UEM), com residência em Anestesiologia pela mesma instituição. Pós-graduada em Ciências da Longevidade e em Adequação Nutricional e Manutenção da Homeostase; cursa pós-graduação em Ginecologia Clínica e Endocrinologia Feminina. Formação complementar em Terapia Neural e Biorressonância, com atuação voltada à medicina integrativa e à regulação dos sistemas biológicos. CRM-PR 25.605 | RQE 2204.",
-    image: "images/esp-thais-moreschi.jpg",
-    instagram: "https://www.instagram.com/dra.thaismoreschi/",
-  },
-  {
     name: "Dr. Tiago Vilela Santos",
     role: "Professor · Estética Íntima Masculina",
     bio: "Médico urologista pela Universidade Federal da Grande Dourados (UFGD), com residências em Cirurgia Geral (Santa Casa de Campo Grande–MS) e em Urologia (Hospital Regional da Asa Norte–HRAN, Brasília). Membro da ABEMSS, CEO e coordenador do Intimate Growth. Atua em assistência, ensino e capacitação médica em saúde sexual masculina e procedimentos regenerativos, com cursos de pós-graduação e treinamentos hands-on. CRM 22944 | RQE 17282.",

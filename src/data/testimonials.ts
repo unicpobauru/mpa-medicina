@@ -21,12 +21,12 @@ export const testimonials: Testimonial[] = [
     instagram: "https://www.instagram.com/drglaucomelo/",
   },
   {
-    name: "Dra. Thaís Moreschi",
-    role: "Professora · Emagrecimento e Obesidade",
+    name: "Dra. Manuela Satake",
+    role: "Professora · Terapias Nutricionais Injetáveis",
     quote:
-      "A medicina metabólica é a área que mais cresce hoje — e o MPA entrega o **protocolo aplicável**, não só a teoria. É a formação que eu gostaria de ter feito no início da minha jornada.",
-    image: "images/esp-thais-moreschi.jpg",
-    instagram: "https://www.instagram.com/dra.thaismoreschi/",
+      "O mercado pede médicos que saibam ir além da consulta padrão. No MPA você sai com o **protocolo na mão** — prescrição, segurança e hands-on — pronto para aplicar na segunda-feira.",
+    image: "images/esp-manuela-satake.jpg",
+    instagram: "https://www.instagram.com/dra_manuelasatake/",
   },
   {
     name: "Dr. Maurício Mosna",
