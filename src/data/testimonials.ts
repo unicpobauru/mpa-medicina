@@ -24,7 +24,7 @@ export const testimonials: Testimonial[] = [
     name: "Dra. Manuela Satake",
     role: "Professora · Terapias Nutricionais Injetáveis",
     quote:
-      "O mercado pede médicos que saibam ir além da consulta padrão. No MPA você sai com o **protocolo na mão** — prescrição, segurança e hands-on — pronto para aplicar na segunda-feira.",
+      "O mercado pede médicos que saibam ir além da consulta padrão. No MPA você sai com o **protocolo na mão** — prescrição e segurança — pronto para aplicar na segunda-feira.",
     image: "images/esp-manuela-satake.jpg",
     instagram: "https://www.instagram.com/dra_manuelasatake/",
   },

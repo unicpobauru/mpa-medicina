@@ -17,7 +17,7 @@ export const faculty: FacultyMember[] = [
   {
     name: "Dr. Tiago Vilela Santos",
     role: "Professor · Estética Íntima Masculina",
-    bio: "Médico urologista pela Universidade Federal da Grande Dourados (UFGD), com residências em Cirurgia Geral (Santa Casa de Campo Grande–MS) e em Urologia (Hospital Regional da Asa Norte–HRAN, Brasília). Membro da ABEMSS, CEO e coordenador do Intimate Growth. Atua em assistência, ensino e capacitação médica em saúde sexual masculina e procedimentos regenerativos, com cursos de pós-graduação e treinamentos hands-on. CRM 22944 | RQE 17282.",
+    bio: "Médico urologista pela Universidade Federal da Grande Dourados (UFGD), com residências em Cirurgia Geral (Santa Casa de Campo Grande–MS) e em Urologia (Hospital Regional da Asa Norte–HRAN, Brasília). Membro da ABEMSS, CEO e coordenador do Intimate Growth. Atua em assistência, ensino e capacitação médica em saúde sexual masculina e procedimentos regenerativos, com cursos de pós-graduação e treinamentos. CRM 22944 | RQE 17282.",
     image: "images/esp-tiago-vilela.jpg",
     instagram: "https://www.instagram.com/drtiagovilela/",
   },

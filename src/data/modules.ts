@@ -19,7 +19,7 @@ export const curriculumTopics: CurriculumTopic[] = [
   {
     title: "Terapias injetáveis (IM/EV)",
     description:
-      "Protocolos intramusculares e endovenosos, com prescrição, segurança e treinamento hands-on.",
+      "Protocolos intramusculares e endovenosos, com prescrição e segurança do paciente.",
   },
 ];
 
@@ -43,5 +43,5 @@ export const curriculumMore = {
   summary:
     "Lipedema, saúde sexual, estética íntima, evidência e segurança (ética, regulação e uso off-label) e gestão, posicionamento e modelos de negócio para clínicas.",
   bigNumber: "400h",
-  bigNumberLabel: "teoria + prática + hands-on",
+  bigNumberLabel: "de formação multidimensional",
 };
